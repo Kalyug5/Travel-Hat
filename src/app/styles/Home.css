@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.home_header_container {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 18px;
+  border-bottom: 1px solid #dae3f8;
+}
+
+.home_header_subcontent {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.home_item {
+  text-decoration: none;
+  font-size: 18px;
+  color: #546070;
+  font-family: "Rethink Sans", sans-serif !important;
+  font-weight: 500;
+}
+
+.home_item_btn {
+  background: transparent;
+  border: none;
+  color: #546070;
+  font-family: "Rethink Sans", sans-serif !important;
+  font-weight: 500;
+  outline: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.home_content_container {
+  display: flex;
+  justify-content: space-between;
+  height: 79vh;
+  padding: 0 20px;
+}
+
+.home_title {
+  font-family: "Rethink Sans", sans-serif !important;
+  font-weight: 550;
+  color: rgb(30, 28, 28);
+  font-size: 42px;
+  margin: 20px 0 5px 0;
+}
+
+.home_sub_title {
+  font-family: "Rethink Sans", sans-serif !important;
+  font-weight: 500;
+  color: rgb(30, 28, 28);
+  font-size: 24px;
+  margin: 0 0 20px 0;
+}
+
+.home_right_container {
+  width: 50%;
+  object-fit: cover;
+  height: 100%;
+  padding: 10px;
+}
+
+.home_left_container {
+  width: 50%;
+  height: 100%;
+}
+
+.feature_card_container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.logo {
+  width: 108px;
+}
+
+.information {
+  background: #fefefe;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  color: #546070;
+  font-family: "Rethink Sans", sans-serif !important;
+  font-size: 14px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+  .home_header_container {
+    padding: 8px 10px;
+  }
+
+  .home_header_subcontent {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .home_item {
+    font-size: 16px;
+  }
+
+  .home_content_container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 0 10px;
+  }
+
+  .home_right_container,
+  .home_left_container {
+    width: 100%;
+    height: auto;
+  }
+
+  .home_title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .home_sub_title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .feature_card_container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  .home_feature_heading {
+    font-size: 18px;
+  }
+}

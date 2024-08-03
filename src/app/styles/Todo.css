@@ -1,0 +1,33 @@
+.Onetodo-container {
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 20px;
+  background: transparent;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.Onetodo-title {
+  font-size: 24px;
+  font-weight: 550;
+  margin-bottom: 10px;
+}
+
+.Onetodo-description {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.return_btn {
+  background: transparent;
+  border: 1px solid #4169e1;
+  margin: 5px;
+  outline: none;
+  color: #4169e1;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}

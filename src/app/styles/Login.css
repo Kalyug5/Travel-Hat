@@ -1,0 +1,112 @@
+.carrerMatter-login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  /* background-color: #f5f7fa; */
+  background-image: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  overflow: hidden;
+}
+
+.container-login-carrerMatter {
+  background: #f8fbfa;
+  padding: 40px 75px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  height: auto;
+}
+
+.container-login-carrerMatter h2 {
+  margin-bottom: 20px;
+  font-weight: 500;
+  color: rgb(21, 44, 91);
+  margin-top: 0;
+  font-family: "Rethink Sans", sans-serif;
+}
+
+.container-login-carrerMatter_input {
+  display: block;
+  width: 90%;
+  padding: 14px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Rethink Sans", sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+
+.container-login-carrerMatter_input:focus {
+  border-color: blueviolet;
+  box-shadow: 0 0 10px rgba(192, 79, 233, 0.2);
+}
+
+.carrerMatter-login-container label {
+  font-weight: 500;
+  font-family: "Rethink Sans", sans-serif;
+}
+
+.google_text {
+  font-size: 16px;
+}
+
+.google-matter-button {
+  background-color: #f3f8fd;
+  color: rgb(21, 44, 91);
+  border: 1px solid #4285f4;
+  padding: 10px;
+  width: 100%;
+  font-family: "Rethink Sans", sans-serif;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.google-matter-icon {
+  font-size: 20px;
+}
+
+.continue-matter-button {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-family: "Rethink Sans", sans-serif;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.toggle-matter-button {
+  background: none;
+  border: none;
+  background-color: #4285f4;
+  color: #f4f5f7;
+  cursor: pointer;
+  font-family: "Rethink Sans", sans-serif;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.forgot__pass {
+  color: #4285f4;
+  margin: 10px 0;
+  cursor: pointer;
+  font-family: "Rethink Sans", sans-serif;
+}

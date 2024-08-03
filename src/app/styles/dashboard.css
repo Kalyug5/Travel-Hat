@@ -1,0 +1,192 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
+} */
+@import url("https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap");
+
+.app-container {
+  display: flex;
+  height: 90vh;
+  font-family: "Rethink Sans", sans-serif !important;
+}
+
+.sidebar {
+  width: 15%;
+  background-color: #f6fcfe;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-right: 1px solid #dae3f8;
+}
+
+.sidebar-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.sidebar-list-item a {
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-list-item span {
+  margin-left: 10px;
+  font-size: 18px;
+  font-family: "Rethink Sans", sans-serif !important;
+}
+
+.sidebar-list-item.active a {
+  color: #1e88e5;
+}
+
+.app-content {
+  padding: 20px;
+  background-color: #f8f9fa;
+  font-family: "Rethink Sans", sans-serif !important;
+  width: 85%;
+}
+
+.app-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.app-content-headerText {
+  color: rgb(30, 28, 28);
+  font-family: "Rethink Sans", sans-serif !important;
+  font-size: 30px;
+  margin: 0;
+}
+
+.app-content-headerButton {
+  background-color: #1e88e5;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Rethink Sans", sans-serif !important;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.app-content-headerButton:hover {
+  background-color: #1565c0;
+}
+
+.search-input-area {
+  color: #0b1c33cc;
+  font-family: "Rethink Sans", sans-serif;
+  border: none;
+  outline: none;
+  width: 100%;
+  background: transparent;
+  font-size: 14px;
+}
+
+.search__icon {
+  margin-right: 8px;
+  font-size: 20px;
+  color: #0b1c33;
+}
+
+.search_container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #1e88e5;
+  border-radius: 8px;
+  padding: 10px 14px;
+  width: 200px;
+  background: transparent;
+  margin-bottom: 10px;
+}
+
+.trip-list-cnt {
+  border: 1px solid #bcccf1;
+  background: #f6fcfe;
+  height: 470px;
+  border-radius: 8px;
+}
+
+.your_trip_cnt {
+  font-family: "Rethink Sans", sans-serif !important;
+  margin: 15px 10px;
+  font-size: 28px;
+  font-weight: 550;
+}
+
+.trip_list_container {
+  background: transparent;
+  border-radius: 10px;
+  box-sizing: border-box;
+  height: auto;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #ccc;
+}
+
+.trip_list_items_cnt span {
+  font-family: "Rethink Sans", sans-serif !important;
+  font-weight: 550;
+}
+
+.trip_list_items_cnt {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Rethink Sans", sans-serif;
+}
+
+.trip_date_cnt {
+  display: flex;
+  gap: 15px;
+}
+
+.trip_logo {
+  color: #1e88e5;
+  cursor: pointer;
+  font-weight: 650;
+}
+
+.no_trips {
+  display: flex;
+  justify-content: center;
+  margin: 100px 0;
+  color: #1e88e5;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: "Rethink Sans", sans-serif !important;
+}
+
+.visit_cnt {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.delete_btn_trip {
+  background: transparent;
+  color: rgb(246, 59, 59);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 6px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-family: "Rethink Sans", sans-serif !important;
+  cursor: pointer;
+}

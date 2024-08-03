@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap");
+
+.ticket-container {
+  width: 90%;
+  margin: 20px auto;
+  background: #f6fcfe;
+  border: 1px solid #dae3f8;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.ticket-header {
+  text-align: left;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.trip_return_btn {
+  background: #4b0082;
+  color: #fff;
+  font-family: "Rethink Sans", sans-serif !important;
+  padding: 10px 12px;
+  font-weight: 550;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  height: 40px;
+}
+
+.ticket-hdr-cnt {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.departure_logo {
+  font-size: 36px;
+}
+
+.ticket-hdr-cnt h2 {
+  margin: 0;
+  font-size: 26px;
+  color: #333;
+  border-bottom: 3px solid #ffcc00;
+  display: inline-block;
+  padding-bottom: 5px;
+  font-family: "Rethink Sans", sans-serif !important;
+}
+
+.ticket-header p {
+  margin: 5px 0 0;
+  color: #999;
+  font-family: "Rethink Sans", sans-serif !important;
+}
+
+.ticket-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.ticket-day {
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  font-family: "Rethink Sans", sans-serif !important;
+}
+
+.ticket-day h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #333;
+  font-family: "Rethink Sans", sans-serif !important;
+}
+
+.ticket-day p {
+  margin: 10px 0;
+  color: #555;
+  font-family: "Rethink Sans", sans-serif !important;
+}
+
+.ticket-section {
+  margin: 10px 0;
+  text-align: left;
+  width: 100%;
+}
+
+.ticket-section h4 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  color: #444;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  font-family: "Rethink Sans", sans-serif !important;
+}
+
+.ticket-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Rethink Sans", sans-serif !important;
+}
+
+.ticket-section ul li {
+  margin: 5px 0;
+  color: #666;
+  font-family: "Rethink Sans", sans-serif !important;
+}
+
+.ticket-section p {
+  color: #777;
+  font-family: "Rethink Sans", sans-serif !important;
+}
+
+.ticket-date {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  background: transparent;
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: navy;
+}
+
+.ticket-date span {
+  font-size: 14px;
+  font-family: "Rethink Sans", sans-serif !important;
+}
+
+.ticket-date span:first-child {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+@media (max-width: 1285px) {
+  .ticket-date {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .ticket-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-day {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .ticket-date {
+    display: none;
+  }
+
+  .ticket-day h3 {
+    text-align: center;
+  }
+
+  .ticket-section {
+    margin: 5px 0;
+  }
+}

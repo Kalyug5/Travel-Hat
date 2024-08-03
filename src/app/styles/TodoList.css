@@ -1,0 +1,68 @@
+.todo_list_container {
+  background: transparent;
+  border-radius: 10px;
+  box-sizing: border-box;
+  height: auto;
+  padding: 20px;
+  width: 500px;
+  margin: 10px;
+  border: 1px solid #ccc;
+}
+
+.todo_main_heading {
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+}
+
+.one_todo_cnt {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 10px 0;
+}
+
+.is_completed_true {
+  font-size: 12px;
+  color: rgb(6, 169, 6);
+}
+
+.is_completed_false {
+  font-size: 12px;
+  color: rgb(232, 189, 35);
+}
+
+.todo_list_text_completed {
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+.todo_list_text {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.completedd {
+  color: rgb(49, 232, 49);
+}
+
+.not_completed {
+  color: rgb(46, 112, 246);
+  cursor: pointer;
+}
+
+.del_btn {
+  color: red;
+  cursor: pointer;
+}

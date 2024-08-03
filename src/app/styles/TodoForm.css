@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+* {
+  font-family: "Lexend", sans-serif;
+}
+
+.todo_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form {
+  background: transparent;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: auto;
+  padding: 20px;
+  width: 320px;
+  margin: 10px;
+}
+
+.title {
+  color: #4169e1;
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-container {
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.txtarea-container {
+  height: 100px;
+  position: relative;
+  width: 100%;
+}
+
+.ic1 {
+  margin-top: 40px;
+}
+
+.input {
+  background: transparent;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+  height: 100%;
+  outline: 0;
+  padding: 5px 10px;
+  width: 100%;
+  resize: none;
+}
+
+.submit {
+  background: transparent;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #4169e1;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  outline: none;
+  text-align: center;
+  width: 100%;
+  border: 1px solid #4169e1;
+}
+
+.submit:active {
+  background-color: #06b;
+}
+
+.error {
+  color: rgb(242, 57, 57);
+}
