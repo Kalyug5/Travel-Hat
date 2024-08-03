@@ -30,7 +30,7 @@ const initialValue = {
 };
 
 export const createTodo = createAsyncThunk("todo/createTodo", async (data) => {
-  const response = await axios.post(`${URL}/api/todo`, data);
+  const response = await axios.post(`${URL}api/todo`, data);
 
   return response?.data;
 });
@@ -38,7 +38,7 @@ export const createTodo = createAsyncThunk("todo/createTodo", async (data) => {
 export const getOneTodo = createAsyncThunk(
   "todo/getOneTodo",
   async ({ id, email }) => {
-    const response = await axios.post(`${URL}/api/todo/${id}`, {
+    const response = await axios.post(`${URL}api/todo/${id}`, {
       email,
     });
     return response?.data;
@@ -47,19 +47,19 @@ export const getOneTodo = createAsyncThunk(
 
 export const getTodo = createAsyncThunk("todo/getTodo", async (data) => {
   console.log(data);
-  const response = await axios.post(`${URL}/api/todos`, data);
+  const response = await axios.post(`${URL}api/todos`, data);
   return response?.data;
 });
 
 export const updateTodo = createAsyncThunk("todo/updateTodo", async (data) => {
-  const response = await axios.put(`${URL}/api/todo/${data}`);
+  const response = await axios.put(`${URL}api/todo/${data}`);
   return response;
 });
 
 export const deleteTodo = createAsyncThunk(
   "todo/deleteTodoData",
   async (data) => {
-    const response = await axios.delete(`${URL}/api/todo/${data}`);
+    const response = await axios.delete(`${URL}api/todo/${data}`);
     return response;
   }
 );

@@ -30,27 +30,27 @@ const initialState = {
 export const registerUser = createAsyncThunk(
   "auth/registerUser",
   async (data) => {
-    const response = await axios.post(`${URL}/api/sign-up`, data);
+    const response = await axios.post(`${URL}api/sign-up`, data);
     return response;
   }
 );
 
 export const userLogin = createAsyncThunk("auth/userLogin", async (data) => {
-  const response = await axios.post(`${URL}/api/sign-in`, data, {
+  const response = await axios.post(`${URL}api/sign-in`, data, {
     withCredentials: true,
   });
   return response?.data;
 });
 
 export const User = createAsyncThunk("auth/User", async () => {
-  const response = await axios.get(`${URL}/api/user`, {
+  const response = await axios.get(`${URL}api/user`, {
     withCredentials: true,
   });
   return response?.data;
 });
 
 export const Logout = createAsyncThunk("auth/Logout", async () => {
-  const response = await axios.post(`${URL}/api/logout`, {
+  const response = await axios.post(`${URL}api/logout`, {
     withCredentials: true,
   });
 

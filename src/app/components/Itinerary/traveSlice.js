@@ -24,25 +24,25 @@ const initialState = {
 export const createTravel = createAsyncThunk(
   "travel/createTravel",
   async (data) => {
-    const response = await axios.post(`${URL}/api/generate-itinerary`, data);
+    const response = await axios.post(`${URL}api/generate-itinerary`, data);
     return response?.data;
   }
 );
 
 export const getTrip = createAsyncThunk("travel/getTrip", async (data) => {
-  const response = await axios.post(`${URL}/api/trip`, data);
+  const response = await axios.post(`${URL}api/trip`, data);
   return response?.data;
 });
 
 export const getTrips = createAsyncThunk("travel/getTrips", async (data) => {
-  const response = await axios.post(`${URL}/api/trips`, data);
+  const response = await axios.post(`${URL}api/trips`, data);
   return response?.data;
 });
 
 export const deleteOneTrip = createAsyncThunk(
   "travel/deleteOneTrip",
   async (data) => {
-    const response = await axios.delete(`${URL}/api/trips/${data}`);
+    const response = await axios.delete(`${URL}api/trips/${data}`);
     return response?.data;
   }
 );
