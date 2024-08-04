@@ -100,7 +100,7 @@ const userSlice = createSlice({
     });
     builder.addCase(Logout.fulfilled, (state, action) => {
       document.cookie =
-        "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=travelhat.onrender.com; Secure; ";
+        "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=travelhat.onrender.com; Secure; SameSite=None";
       state.logoutDataLoading = false;
       state.userData = {};
       state.logoutDataError = action.payload.error;
