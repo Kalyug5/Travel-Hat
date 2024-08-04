@@ -99,8 +99,7 @@ const userSlice = createSlice({
       state.logoutDataLoading = true;
     });
     builder.addCase(Logout.fulfilled, (state, action) => {
-      document.cookie =
-        "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=https://travelhat.vercel.app; Secure; SameSite=None";
+      document.cookie = `token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain="";`;
       state.logoutDataLoading = false;
       state.userData = {};
       state.logoutDataError = action.payload.error;
