@@ -25,7 +25,7 @@ const Header = () => {
   const handleLogout = async () => {
     try {
       const response = await dispatch(Logout()).unwrap();
-      console.log(getCookie(" token"));
+      console.log(getCookie("token"));
       console.log(response);
     } catch (error) {}
   };
