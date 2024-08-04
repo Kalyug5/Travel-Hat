@@ -21,6 +21,19 @@ const initialValues = {
   password: "",
 };
 
+export const getCookie = (cookieName) => {
+  const name = cookieName + "=";
+  const decodedCookie = decodeURIComponent(document.cookie);
+  const cookies = decodedCookie.split(";");
+  for (let cookie of cookies) {
+    cookie = cookie.trim();
+    if (cookie.indexOf(name) === 0) {
+      return cookie.substring(name.length, cookie.length);
+    }
+  }
+  return "";
+};
+
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -29,6 +42,7 @@ const Login = () => {
     try {
       const response = await dispatch(User()).unwrap();
       console.log(response);
+      console.log(getCookie("token"));
     } catch (error) {
       console.log(error);
     }
