@@ -47,7 +47,7 @@
   color: #526477;
 }
 
-@property --nose {
+/* @property --nose {
   syntax: "<percentage>";
   initial-value: 0%;
   inherits: false;
@@ -99,5 +99,29 @@
   100% {
     --nose: 100%;
     --tail: 100%;
+  }
+} */
+
+.loader {
+  border: 6px solid transparent;
+  border-top-color: #ea4335;
+  border-right-color: #4285f4;
+  border-bottom-color: #34a853;
+  border-left-color: #fbbc05;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  animation: spin 1s linear infinite; /* Animation */
+  position: relative;
+  margin: auto;
+  display: block;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
