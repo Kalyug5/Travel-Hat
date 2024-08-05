@@ -42,7 +42,7 @@ export const getTrips = createAsyncThunk("travel/getTrips", async (data) => {
 export const deleteOneTrip = createAsyncThunk(
   "travel/deleteOneTrip",
   async (data) => {
-    const response = await axios.delete(`${URL}api/trips/${data}`);
+    const response = await axios.delete(`${URL}api/trip/${data}`);
     return response?.data;
   }
 );
