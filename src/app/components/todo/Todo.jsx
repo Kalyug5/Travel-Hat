@@ -5,10 +5,12 @@ import { getOneTodo } from "./todoSlice";
 import "../../styles/Todo.css";
 import { IoMdReturnLeft } from "react-icons/io";
 import { User } from "../../Authentication/userAuthSlice";
+import { useLoader } from "../../stories/LoaderContext";
 
 const Todo = () => {
   const { userData, userDataLoading } = useSelector((state) => state.user);
   const dispatch = useDispatch();
+  const { showLoader, hideLoader } = useLoader();
 
   const getUser = async () => {
     try {
@@ -32,7 +34,9 @@ const Todo = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   console.log(id);
-  const { getOneTodoDetails } = useSelector((state) => state.todo);
+  const { getOneTodoDetails, getOneTodoLoading } = useSelector(
+    (state) => state.todo
+  );
 
   const fetchData = async (email) => {
     try {
@@ -47,13 +51,18 @@ const Todo = () => {
   };
 
   return (
-    <div className="Onetodo-container">
-      <div className="Onetodo-title">{getOneTodoDetails.title}</div>
-      <div className="Onetodo-description">{getOneTodoDetails.description}</div>
-      <button className="return_btn" onClick={() => navigate("/todo")}>
-        return <IoMdReturnLeft />
-      </button>
-    </div>
+    <>
+      {getOneTodoLoading || userDataLoading ? showLoader() : hideLoader()}
+      <div className="Onetodo-container">
+        <div className="Onetodo-title">{getOneTodoDetails.title}</div>
+        <div className="Onetodo-description">
+          {getOneTodoDetails.description}
+        </div>
+        <button className="return_btn" onClick={() => navigate("/todo")}>
+          return <IoMdReturnLeft />
+        </button>
+      </div>
+    </>
   );
 };
 

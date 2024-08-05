@@ -6,11 +6,13 @@ import { IoCheckmarkCircleSharp } from "react-icons/io5";
 import { MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { User } from "../../Authentication/userAuthSlice";
+import { useLoader } from "../../stories/LoaderContext";
 
 const TodoList = ({ fetchData, getTodoDetails }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { userData, userDataLoading } = useSelector((state) => state.user);
+  const { showLoader, hideLoader } = useLoader();
 
   const handleUpdate = async (id) => {
     try {
@@ -39,54 +41,57 @@ const TodoList = ({ fetchData, getTodoDetails }) => {
   }, [userData]);
 
   return (
-    <div className="todo_list_container">
-      <p className="todo_main_heading">Your Tasks</p>
-      {Object.keys(userData).length > 0 ? (
-        Object.keys(getTodoDetails).length === 0 ? (
-          <div>No Todos For Now</div>
-        ) : (
-          getTodoDetails?.map((todo, key) => {
-            return (
-              <div className="one_todo_cnt">
-                <div className="todo_list" key={key}>
-                  <span
-                    className={
-                      todo.completed
-                        ? "todo_list_text_completed"
-                        : "todo_list_text"
-                    }
-                    onClick={() => navigate(`/todo/${todo._id}`)}
-                  >
-                    {todo.title}
-                  </span>
+    <>
+      {userDataLoading ? showLoader() : hideLoader()}
+      <div className="todo_list_container">
+        <p className="todo_main_heading">Your Tasks</p>
+        {Object.keys(userData).length > 0 ? (
+          Object.keys(getTodoDetails).length === 0 ? (
+            <div>No Todos For Now</div>
+          ) : (
+            getTodoDetails?.map((todo, key) => {
+              return (
+                <div className="one_todo_cnt">
+                  <div className="todo_list" key={key}>
+                    <span
+                      className={
+                        todo.completed
+                          ? "todo_list_text_completed"
+                          : "todo_list_text"
+                      }
+                      onClick={() => navigate(`/todo/${todo._id}`)}
+                    >
+                      {todo.title}
+                    </span>
 
-                  <span
-                    className={
-                      todo.completed
-                        ? "is_completed_true"
-                        : "is_completed_false"
-                    }
-                  >
-                    {todo.completed ? "DONE" : "IN PROGRESS"}
-                  </span>
+                    <span
+                      className={
+                        todo.completed
+                          ? "is_completed_true"
+                          : "is_completed_false"
+                      }
+                    >
+                      {todo.completed ? "DONE" : "IN PROGRESS"}
+                    </span>
+                  </div>
+                  <IoCheckmarkCircleSharp
+                    className={todo.completed ? "completedd" : "not_completed"}
+                    onClick={() => handleUpdate(todo._id)}
+                  />
+
+                  <MdDelete
+                    className="del_btn"
+                    onClick={() => handleDelete(todo._id)}
+                  />
                 </div>
-                <IoCheckmarkCircleSharp
-                  className={todo.completed ? "completedd" : "not_completed"}
-                  onClick={() => handleUpdate(todo._id)}
-                />
-
-                <MdDelete
-                  className="del_btn"
-                  onClick={() => handleDelete(todo._id)}
-                />
-              </div>
-            );
-          })
-        )
-      ) : (
-        <div>Login-Signup to get your todos</div>
-      )}
-    </div>
+              );
+            })
+          )
+        ) : (
+          <div>Login-Signup to get your todos</div>
+        )}
+      </div>
+    </>
   );
 };
 

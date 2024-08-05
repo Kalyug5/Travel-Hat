@@ -76,6 +76,8 @@
   border-bottom-color: #34a853;
   border-left-color: #fbbc05;
   animation: load 1.6s both infinite ease-in-out, spin 2s infinite linear;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 @keyframes spin {
