@@ -51,6 +51,7 @@ const Login = () => {
   };
 
   const handleSubmit = async (values, { resetForm }) => {
+    showLoader();
     try {
       const response = await dispatch(
         userLogin({
@@ -71,11 +72,12 @@ const Login = () => {
     } catch (error) {
       console.log(error);
       resetForm();
+    } finally {
+      hideLoader();
     }
   };
   return (
     <>
-      {loginDataLoading ? showLoader() : hideLoader()}
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
