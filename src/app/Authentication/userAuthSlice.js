@@ -5,6 +5,8 @@ const URL = process.env.REACT_APP_SERVER_URI;
 
 console.log(URL);
 
+const token = localStorage.getItem("token");
+
 const initialState = {
   //login-data
   loginData: {},
@@ -44,6 +46,9 @@ export const userLogin = createAsyncThunk("auth/userLogin", async (data) => {
 
 export const User = createAsyncThunk("auth/User", async () => {
   const response = await axios.get(`${URL}api/user`, {
+    headers: {
+      Authorization: `Bearer ${token || ""}`,
+    },
     withCredentials: true,
   });
   return response?.data;
@@ -53,6 +58,8 @@ export const Logout = createAsyncThunk("auth/Logout", async () => {
   const response = await axios.post(`${URL}api/logout`, {
     withCredentials: true,
   });
+
+  localStorage.removeItem("token");
 
   return response?.data;
 });
@@ -99,7 +106,7 @@ const userSlice = createSlice({
       state.logoutDataLoading = true;
     });
     builder.addCase(Logout.fulfilled, (state, action) => {
-      document.cookie = `token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain="";`;
+      // document.cookie = `token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain="";`;
       state.logoutDataLoading = false;
       state.userData = {};
       state.logoutDataError = action.payload.error;
