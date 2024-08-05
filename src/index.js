@@ -6,16 +6,16 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "./store";
 import { LoaderProvider } from "./app/stories/LoaderContext";
+import LoadingOverlay from "./app/stories/Loader";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <LoaderProvider>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <App />
+      <LoadingOverlay />
     </LoaderProvider>
-  </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

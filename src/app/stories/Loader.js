@@ -11,7 +11,7 @@ const LoadingOverlay = () => {
     <div style={overlayStyle}>
       <div style={spinnerContainer}>
         <div className="loader"></div>
-        <div style={textContainerStyle}>
+        <div>
           <span style={loadingTextStyle}>Loading...</span>
         </div>
       </div>
@@ -25,7 +25,7 @@ const overlayStyle = {
   left: 0,
   width: "100%",
   height: "100%",
-  backgroundColor: "rgba(0, 0, 0, 0.6)",
+  backgroundColor: "rgba(237, 234, 222,0.6)",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -39,17 +39,10 @@ const spinnerContainer = {
   alignItems: "center",
 };
 
-const textContainerStyle = {
-  marginTop: "10px",
-  backgroundColor: "white",
-  padding: "5px 20px",
-  borderRadius: "5px",
-  boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-};
-
 const loadingTextStyle = {
-  fontSize: "16px",
+  fontSize: "18px",
   color: "#012970",
+  fontWeight: "550",
 };
 
 export default LoadingOverlay;
