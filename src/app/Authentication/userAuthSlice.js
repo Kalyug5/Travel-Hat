@@ -5,8 +5,6 @@ const URL = process.env.REACT_APP_SERVER_URI;
 
 console.log(URL);
 
-const token = localStorage.getItem("token");
-
 const initialState = {
   //login-data
   loginData: {},
@@ -45,6 +43,7 @@ export const userLogin = createAsyncThunk("auth/userLogin", async (data) => {
 });
 
 export const User = createAsyncThunk("auth/User", async () => {
+  const token = localStorage.getItem("token");
   console.log(token);
   const response = await axios.get(`${URL}api/user`, {
     headers: {

@@ -21,18 +21,18 @@ const initialValues = {
   password: "",
 };
 
-export const getCookie = (cookieName) => {
-  const name = cookieName + "=";
-  const decodedCookie = decodeURIComponent(document.cookie);
-  const cookies = decodedCookie.split(";");
-  for (let cookie of cookies) {
-    cookie = cookie.trim();
-    if (cookie.indexOf(name) === 0) {
-      return cookie.substring(name.length, cookie.length);
-    }
-  }
-  return "";
-};
+// export const getCookie = (cookieName) => {
+//   const name = cookieName + "=";
+//   const decodedCookie = decodeURIComponent(document.cookie);
+//   const cookies = decodedCookie.split(";");
+//   for (let cookie of cookies) {
+//     cookie = cookie.trim();
+//     if (cookie.indexOf(name) === 0) {
+//       return cookie.substring(name.length, cookie.length);
+//     }
+//   }
+//   return "";
+// };
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -42,7 +42,6 @@ const Login = () => {
     try {
       const response = await dispatch(User()).unwrap();
       console.log(response);
-      console.log(getCookie("token"));
     } catch (error) {
       console.log(error);
     }
@@ -59,8 +58,9 @@ const Login = () => {
       console.log(response);
       if (response?.status == 200) {
         localStorage.setItem("token", response.token);
-        fectchData();
+
         navigate("/");
+        fectchData();
         resetForm();
       } else {
         alert("Invalid Credentials");
