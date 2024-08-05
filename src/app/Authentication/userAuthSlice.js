@@ -51,6 +51,9 @@ export const User = createAsyncThunk("auth/User", async () => {
     },
     withCredentials: true,
   });
+
+  console.log(token);
+
   return response?.data;
 });
 
