@@ -45,14 +45,13 @@ export const userLogin = createAsyncThunk("auth/userLogin", async (data) => {
 });
 
 export const User = createAsyncThunk("auth/User", async () => {
+  console.log(token);
   const response = await axios.get(`${URL}api/user`, {
     headers: {
       Authorization: `Bearer ${token || ""}`,
     },
     withCredentials: true,
   });
-
-  console.log(token);
 
   return response?.data;
 });
