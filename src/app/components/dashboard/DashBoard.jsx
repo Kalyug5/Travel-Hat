@@ -9,6 +9,7 @@ import { deleteOneTrip, getTrips } from "../Itinerary/traveSlice";
 import { User } from "../../Authentication/userAuthSlice";
 import { GrShare } from "react-icons/gr";
 import { IoMdTrash } from "react-icons/io";
+import { useLoader } from "../../stories/LoaderContext";
 
 const DashBoard = () => {
   const { TripsDetails, TripsDetailsLoading } = useSelector(
@@ -16,6 +17,8 @@ const DashBoard = () => {
   );
   const dispatch = useDispatch();
   const { userData, userDataLoading } = useSelector((state) => state.user);
+
+  const { showLoader, hideLoader } = useLoader();
 
   const getUser = async () => {
     try {
@@ -59,6 +62,7 @@ const DashBoard = () => {
 
   return (
     <>
+      {TripsDetailsLoading || userDataLoading ? showLoader() : hideLoader()}
       <div className="app-container">
         <div className="sidebar">
           <div className="sidebar-header"></div>

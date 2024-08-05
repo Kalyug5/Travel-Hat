@@ -3,9 +3,10 @@ import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import "../styles/Login.css";
 import * as Yup from "yup";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { User, userLogin } from "./userAuthSlice";
+import { useLoader } from "../stories/LoaderContext";
 
 const validationSchema = Yup.object({
   email: Yup.string("Enter your email")
@@ -35,8 +36,10 @@ const initialValues = {
 // };
 
 const Login = () => {
+  const { loginDataLoading } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { showLoader, hideLoader } = useLoader();
 
   const fectchData = async () => {
     try {
@@ -71,63 +74,66 @@ const Login = () => {
     }
   };
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={handleSubmit}
-    >
-      {({
-        values,
-        errors,
-        isSubmitting,
-        isValid,
-        dirty,
-        setFieldValue,
-        resetForm,
-      }) => (
-        <div className="carrerMatter-login-container">
-          <Form className="form-input-wrapper">
-            <div className="container-login-carrerMatter">
-              <h2 style={{ textAlign: "center" }}>Login to get started</h2>
-              <button className="google-matter-button">
-                <FcGoogle className="google-matter-icon" />{" "}
-                <span className="google_text">Continue with Google</span>
-              </button>
-              <p style={{ textAlign: "center" }}>OR</p>
-              <label htmlFor="email">Email</label>
-              <Field
-                as="input"
-                type="email"
-                placeholder="youremail@mail.com"
-                name="email"
-                className="container-login-carrerMatter_input"
-              />
+    <>
+      {loginDataLoading ? showLoader() : hideLoader()}
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
+        {({
+          values,
+          errors,
+          isSubmitting,
+          isValid,
+          dirty,
+          setFieldValue,
+          resetForm,
+        }) => (
+          <div className="carrerMatter-login-container">
+            <Form className="form-input-wrapper">
+              <div className="container-login-carrerMatter">
+                <h2 style={{ textAlign: "center" }}>Login to get started</h2>
+                <button className="google-matter-button">
+                  <FcGoogle className="google-matter-icon" />{" "}
+                  <span className="google_text">Continue with Google</span>
+                </button>
+                <p style={{ textAlign: "center" }}>OR</p>
+                <label htmlFor="email">Email</label>
+                <Field
+                  as="input"
+                  type="email"
+                  placeholder="youremail@mail.com"
+                  name="email"
+                  className="container-login-carrerMatter_input"
+                />
 
-              <label htmlFor="password">Password</label>
-              <Field
-                as="input"
-                type="password"
-                name="password"
-                placeholder="At least 4 characters"
-                className="container-login-carrerMatter_input"
-              />
-              <div className="forgot__pass">Forgot Password?</div>
-              <button type="submit" className="continue-matter-button">
-                Log In
-              </button>
-              <p style={{ textAlign: "center" }}>OR</p>
-              <button
-                className="toggle-matter-button"
-                type="button"
-                onClick={() => navigate("/signup")}
-              >
-                Sign Up
-              </button>
-            </div>
-          </Form>
-        </div>
-      )}
-    </Formik>
+                <label htmlFor="password">Password</label>
+                <Field
+                  as="input"
+                  type="password"
+                  name="password"
+                  placeholder="At least 4 characters"
+                  className="container-login-carrerMatter_input"
+                />
+                <div className="forgot__pass">Forgot Password?</div>
+                <button type="submit" className="continue-matter-button">
+                  Log In
+                </button>
+                <p style={{ textAlign: "center" }}>OR</p>
+                <button
+                  className="toggle-matter-button"
+                  type="button"
+                  onClick={() => navigate("/signup")}
+                >
+                  Sign Up
+                </button>
+              </div>
+            </Form>
+          </div>
+        )}
+      </Formik>
+    </>
   );
 };
 
