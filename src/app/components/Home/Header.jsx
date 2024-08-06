@@ -59,7 +59,7 @@ const Header = () => {
           Services
         </Link>
         {Object.keys(userData).length > 0 ? (
-          <button className="home_item" onClick={handleLogout}>
+          <button className="home_item_btn" onClick={handleLogout}>
             Logout
           </button>
         ) : (
