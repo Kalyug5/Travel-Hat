@@ -57,10 +57,10 @@ const Travel = () => {
     setIntrest(e.target.value);
   };
   const addSkill = (setFieldValue, values) => {
-    if (intrest.trim()) {
-      setFieldValue("interests", [...values.interests, intrest.trim()]);
-      setIntrest("");
-    }
+    const intrests = intrest.split(",").map((item) => item.trim());
+
+    setFieldValue("interests", [...values.interests, ...intrests]);
+    setIntrest("");
   };
 
   const handleSkillKeyDown = (e, setFieldValue, values) => {
@@ -92,10 +92,9 @@ const Travel = () => {
   };
 
   const addSkillActivity = (setFieldValue, values) => {
-    if (activity.trim()) {
-      setFieldValue("activities", [...values.activities, activity.trim()]);
-      setAcitvity("");
-    }
+    const act = activity.split(",").map((item) => item.trim());
+    setFieldValue("activities", [...values.activities, ...act]);
+    setAcitvity("");
   };
 
   const handleCloseActivity = (index, setFieldValue, values) => {
