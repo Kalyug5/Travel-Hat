@@ -119,4 +119,18 @@
   .del_btn_X {
     display: block; /* Show on smaller screens */
   }
+
+  .completedd_x {
+    color: rgb(49, 232, 49);
+    cursor: none;
+  }
+  .not_completed_x {
+    color: rgb(46, 112, 246);
+    cursor: pointer;
+  }
+
+  .del_btn_X {
+    color: red;
+    cursor: pointer;
+  }
 }
