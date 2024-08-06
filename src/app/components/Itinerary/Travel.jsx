@@ -8,6 +8,7 @@ import { createTravel } from "./traveSlice";
 import { User } from "../../Authentication/userAuthSlice";
 import { TbFileSad } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
+import { useLoader } from "../../stories/LoaderContext";
 
 const initialValues = {
   destination: "",
@@ -39,6 +40,7 @@ const Travel = () => {
   );
 
   const navigate = useNavigate();
+  const { showLoader, hideLoader } = useLoader();
 
   const getUser = async () => {
     try {
@@ -127,6 +129,7 @@ const Travel = () => {
   };
   return (
     <>
+      {travelDetailsLoading ? showLoader() : hideLoader()}
       {Object.keys(userData).length > 0 ? (
         <Formik
           initialValues={initialValues}
