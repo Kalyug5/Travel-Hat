@@ -46,8 +46,8 @@ const TodoList = ({ fetchData, getTodoDetails }) => {
       <div className="todo_list_container">
         <p className="todo_main_heading">Your Tasks</p>
         {Object.keys(userData).length > 0 ? (
-          Object.keys(getTodoDetails).length === 0 ||
           getTodoDetails === null ||
+          Object.keys(getTodoDetails).length === 0 ||
           getTodoDetails === undefined ? (
             <div>No Todos For Now</div>
           ) : (
