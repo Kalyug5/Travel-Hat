@@ -96,7 +96,14 @@ const Login = () => {
             <Form className="form-input-wrapper">
               <div className="container-login-carrerMatter">
                 <h2 style={{ textAlign: "center" }}>Login to get started</h2>
-                <button className="google-matter-button">
+                <button
+                  className="google-matter-button"
+                  onClick={() =>
+                    alert(
+                      "This Feature currently is in development! Stay Tuned"
+                    )
+                  }
+                >
                   <FcGoogle className="google-matter-icon" />{" "}
                   <span className="google_text">Continue with Google</span>
                 </button>
