@@ -5,6 +5,11 @@
   flex-direction: column;
 }
 
+.gug {
+  display: flex;
+  gap: 10px;
+}
+
 .profile-form-group label {
   margin: 5px 0;
   font-family: "Lexend", sans-serif;
@@ -13,12 +18,13 @@
 }
 
 .profile-form-group input {
-  padding: 10px;
+  padding: 8px;
   border: 1px solid #cecdcd;
   border-radius: 4px;
   font-family: "Lexend", sans-serif;
   font-weight: normal;
   font-weight: 500;
+  height: 25px;
 }
 
 .profile-form-group input:focus {
@@ -165,7 +171,11 @@
     font-size: 24px;
   }
 
+  .profile-form-group input {
+    flex: 1;
+  }
+
   .walk-form-component button {
-    width: 100%;
+    width: 30%;
   }
 }

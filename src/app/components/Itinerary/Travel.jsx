@@ -184,16 +184,21 @@ const Travel = () => {
                   <label>
                     <div className="profile-form-group">
                       <div>Intrests</div>
-                      <Field
-                        type="text"
-                        name="interests"
-                        placeholder="Enter your intrests and press enter"
-                        onChange={(e) => handleSkillsChange(e)}
-                        onKeyDown={(e) =>
-                          handleSkillKeyDown(e, setFieldValue, values)
-                        }
-                        value={intrest}
-                      />
+                      <div className="gug">
+                        <Field
+                          type="text"
+                          name="interests"
+                          placeholder="Enter your intrests "
+                          onChange={(e) => handleSkillsChange(e)}
+                          onKeyDown={(e) =>
+                            handleSkillKeyDown(e, setFieldValue, values)
+                          }
+                          value={intrest}
+                        />
+                        <button onClick={() => addSkill(setFieldValue, values)}>
+                          save
+                        </button>
+                      </div>
                       <div>
                         {errors?.interests && touched.interests ? (
                           <span className="walk-errs">{errors.interests}</span>
@@ -237,16 +242,25 @@ const Travel = () => {
                   <label>
                     <div className="profile-form-group">
                       <div>Activities</div>
-                      <Field
-                        type="text"
-                        name="activities"
-                        placeholder="Enter your activity and press enter"
-                        onChange={(e) => handleActivityChange(e)}
-                        onKeyDown={(e) =>
-                          handleActivityKeyDown(e, setFieldValue, values)
-                        }
-                        value={activity}
-                      />
+                      <div className="gug">
+                        <Field
+                          type="text"
+                          name="activities"
+                          placeholder="Enter your activity "
+                          onChange={(e) => handleActivityChange(e)}
+                          onKeyDown={(e) =>
+                            handleActivityKeyDown(e, setFieldValue, values)
+                          }
+                          value={activity}
+                        />
+                        <button
+                          onClick={() =>
+                            addSkillActivity(setFieldValue, values)
+                          }
+                        >
+                          save
+                        </button>
+                      </div>
                       <div>
                         {errors?.activities && touched.activities ? (
                           <span className="walk-errs">{errors.activities}</span>
