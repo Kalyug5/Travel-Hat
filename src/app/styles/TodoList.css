@@ -70,6 +70,17 @@
   cursor: pointer;
 }
 
+.completedd_x {
+  display: none;
+}
+
+.not_completed_x {
+  display: none;
+}
+
+.del_btn_X {
+  display: none;
+}
 /* Media Queries */
 @media (max-width: 767px) {
   .todo_list_container {
@@ -100,6 +111,12 @@
   .completedd,
   .not_completed,
   .del_btn {
-    font-size: 18px; /* Adjust icon size */
+    display: none;
+  }
+
+  .completedd_x,
+  .not_completed_x,
+  .del_btn_X {
+    display: block; /* Show on smaller screens */
   }
 }

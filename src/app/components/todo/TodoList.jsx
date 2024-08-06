@@ -73,6 +73,17 @@ const TodoList = ({ fetchData, getTodoDetails }) => {
                     >
                       {todo.completed ? "DONE" : "IN PROGRESS"}
                     </span>
+                    <IoCheckmarkCircleSharp
+                      className={
+                        todo.completed ? "completedd_x" : "not_completed_x"
+                      }
+                      onClick={() => handleUpdate(todo._id)}
+                    />
+
+                    <MdDelete
+                      className="del_btn_X"
+                      onClick={() => handleDelete(todo._id)}
+                    />
                   </div>
                   <IoCheckmarkCircleSharp
                     className={todo.completed ? "completedd" : "not_completed"}
