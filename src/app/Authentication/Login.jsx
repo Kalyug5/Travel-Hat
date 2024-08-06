@@ -13,7 +13,7 @@ const validationSchema = Yup.object({
     .email("Enter a valid email")
     .required("Required*"),
   password: Yup.string("Enter password")
-    .min("2", "minimum six digit is required")
+    .min("6", "minimum 6 digit is required")
     .required("Required*"),
 });
 
@@ -122,7 +122,7 @@ const Login = () => {
                   as="input"
                   type="password"
                   name="password"
-                  placeholder="At least 4 characters"
+                  placeholder="Enter Your Password"
                   className="container-login-carrerMatter_input"
                 />
                 <div className="forgot__pass">Forgot Password?</div>
