@@ -282,4 +282,7 @@ body {
   .app-content-headerButton {
     width: 50px;
   }
+  .trip_date_cnt {
+    display: none;
+  }
 }
