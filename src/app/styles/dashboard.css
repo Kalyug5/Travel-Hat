@@ -11,26 +11,34 @@ body {
 } */
 @import url("https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap");
 
+/* Base styles */
 .app-container {
   display: flex;
   height: 90vh;
   font-family: "Rethink Sans", sans-serif !important;
+  flex-direction: column;
 }
 
 .sidebar {
-  width: 15%;
+  width: 100%;
   background-color: #f6fcfe;
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border-right: 1px solid #dae3f8;
+  border-bottom: 1px solid #dae3f8;
 }
 
 .sidebar-list {
   list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 45px;
+  flex-direction: row;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.sidebar-list-item {
+  flex-shrink: 0;
 }
 
 .sidebar-list-item a {
@@ -40,8 +48,17 @@ body {
   align-items: center;
 }
 
-.sidebar-list-item span {
-  margin-left: 10px;
+.sidebar-list-item .xyz {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-list-item .xyz .icon {
+  font-size: 18px;
+}
+
+.sidebar-list-item .xyz .text {
   font-size: 18px;
   font-family: "Rethink Sans", sans-serif !important;
 }
@@ -54,7 +71,8 @@ body {
   padding: 20px;
   background-color: #f8f9fa;
   font-family: "Rethink Sans", sans-serif !important;
-  width: 85%;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .app-content-header {
@@ -68,7 +86,7 @@ body {
 .app-content-headerText {
   color: rgb(30, 28, 28);
   font-family: "Rethink Sans", sans-serif !important;
-  font-size: 30px;
+  font-size: 24px;
   margin: 0;
 }
 
@@ -111,7 +129,8 @@ body {
   border: 1px solid #1e88e5;
   border-radius: 8px;
   padding: 10px 14px;
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
   background: transparent;
   margin-bottom: 10px;
 }
@@ -119,14 +138,15 @@ body {
 .trip-list-cnt {
   border: 1px solid #bcccf1;
   background: #f6fcfe;
-  height: 470px;
   border-radius: 8px;
+  padding: 10px;
+  overflow-y: auto;
 }
 
 .your_trip_cnt {
   font-family: "Rethink Sans", sans-serif !important;
   margin: 15px 10px;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 550;
 }
 
@@ -136,7 +156,7 @@ body {
   box-sizing: border-box;
   height: auto;
   padding: 20px;
-  margin: 10px;
+  margin: 10px 0;
   border: 1px solid #ccc;
 }
 
@@ -148,6 +168,7 @@ body {
 .trip_list_items_cnt {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   font-family: "Rethink Sans", sans-serif;
 }
 
@@ -167,7 +188,7 @@ body {
   justify-content: center;
   margin: 100px 0;
   color: #1e88e5;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 600;
   font-family: "Rethink Sans", sans-serif !important;
 }
@@ -189,4 +210,76 @@ body {
   align-items: center;
   font-family: "Rethink Sans", sans-serif !important;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 15%;
+    border-right: 1px solid #dae3f8;
+    border-bottom: none;
+  }
+
+  .sidebar-list {
+    flex-direction: column;
+    gap: 45px;
+  }
+
+  .sidebar-list-item .xyz .text {
+    display: inline;
+  }
+
+  .app-content {
+    width: 85%;
+  }
+
+  .app-content-headerText {
+    font-size: 30px;
+  }
+
+  .search_container {
+    width: 200px;
+  }
+
+  .your_trip_cnt {
+    font-size: 28px;
+  }
+
+  .no_trips {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar-list-item .xyz .text {
+    display: none;
+  }
+
+  .sidebar-list-item .xyz .icon {
+    font-size: 24px;
+  }
+  .sidebar-list {
+    flex-direction: row;
+    gap: 80px;
+  }
+  .app-content {
+    padding: 10px 2px;
+  }
+
+  .btn-txt {
+    display: none;
+  }
+
+  .sidebar {
+    background: transparent;
+    border: none;
+    width: fit-content;
+  }
+
+  .app-content-headerButton {
+    width: 50px;
+  }
 }

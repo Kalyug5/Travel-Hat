@@ -10,6 +10,10 @@ import { User } from "../../Authentication/userAuthSlice";
 import { GrShare } from "react-icons/gr";
 import { IoMdTrash } from "react-icons/io";
 import { useLoader } from "../../stories/LoaderContext";
+import { IoHomeOutline } from "react-icons/io5";
+import { LuListTodo } from "react-icons/lu";
+import { MdOutlineTravelExplore } from "react-icons/md";
+import { MdForwardToInbox } from "react-icons/md";
 
 const DashBoard = () => {
   const { TripsDetails, TripsDetailsLoading } = useSelector(
@@ -69,27 +73,42 @@ const DashBoard = () => {
           <ul className="sidebar-list">
             <li className="sidebar-list-item">
               <a href="/">
-                <span>Home</span>
+                <span className="xyz">
+                  <span className="icon">
+                    <IoHomeOutline />
+                  </span>
+                  <span className="text">Home</span>
+                </span>
               </a>
             </li>
             <li className="sidebar-list-item active">
               <a href="/dashboard">
-                <span>My Trips</span>
+                <span className="xyz">
+                  <span className="icon">
+                    <MdOutlineTravelExplore />
+                  </span>
+                  <span className="text">My Trips</span>
+                </span>
               </a>
             </li>
             <li className="sidebar-list-item">
               <a href="/todo">
-                <span>My Todos</span>
+                <span className="xyz">
+                  <span className="icon">
+                    <LuListTodo />
+                  </span>
+                  <span className="text">My Todos</span>
+                </span>
               </a>
             </li>
             <li className="sidebar-list-item">
               <a href="/">
-                <span>Inbox</span>
-              </a>
-            </li>
-            <li className="sidebar-list-item">
-              <a href="/">
-                <span>Notifications</span>
+                <span className="xyz">
+                  <span className="icon">
+                    <MdForwardToInbox />
+                  </span>
+                  <span className="text">Inbox</span>
+                </span>
               </a>
             </li>
           </ul>
@@ -102,7 +121,7 @@ const DashBoard = () => {
               onClick={() => navigate("/travel")}
             >
               <FaPlus />
-              Trips
+              <span className="btn-txt">Trips</span>
             </button>
           </div>
           <div className="search_container">
