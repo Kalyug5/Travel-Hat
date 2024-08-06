@@ -19,7 +19,7 @@
 
 .one_todo_cnt {
   display: flex;
-  justify-content: space-between;
+
   align-items: center;
   gap: 10px;
   flex-wrap: wrap; /* Allows items to wrap on smaller screens */
