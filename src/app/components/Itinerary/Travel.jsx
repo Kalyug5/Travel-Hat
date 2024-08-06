@@ -195,7 +195,10 @@ const Travel = () => {
                           }
                           value={intrest}
                         />
-                        <button onClick={() => addSkill(setFieldValue, values)}>
+                        <button
+                          onClick={() => addSkill(setFieldValue, values)}
+                          type="button"
+                        >
                           save
                         </button>
                       </div>
@@ -254,6 +257,7 @@ const Travel = () => {
                           value={activity}
                         />
                         <button
+                          type="button"
                           onClick={() =>
                             addSkillActivity(setFieldValue, values)
                           }
