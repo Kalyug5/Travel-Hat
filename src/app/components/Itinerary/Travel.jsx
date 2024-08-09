@@ -125,7 +125,9 @@ const Travel = () => {
       ).unwrap();
       console.log(response);
       navigate("/dashboard");
-    } catch (error) {}
+    } catch (error) {
+      console.log("Got error");
+    }
   };
   return (
     <>

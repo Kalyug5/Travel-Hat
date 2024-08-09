@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "./userAuthSlice";
+import { useLoader } from "../stories/LoaderContext";
 
 const validationSchema = Yup.object({
   username: Yup.string().required("Enter your username"),
@@ -26,7 +27,9 @@ const initialValues = {
 const Signup = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { showLoader, hideLoader } = useLoader();
   const handleSubmit = async (values, { resetForm }) => {
+    showLoader();
     try {
       const response = await dispatch(
         registerUser({
@@ -39,9 +42,13 @@ const Signup = () => {
       if (response?.status == 201) {
         navigate("/login");
         resetForm();
+      } else {
+        alert("Something Went Wrong Try Again");
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      hideLoader();
     }
   };
   return (
