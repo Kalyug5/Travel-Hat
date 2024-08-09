@@ -70,7 +70,7 @@ const Login = () => {
         alert("Invalid Credentials");
       }
     } catch (error) {
-      console.log(error);
+      alert("Invalid Credentials");
       resetForm();
     } finally {
       hideLoader();

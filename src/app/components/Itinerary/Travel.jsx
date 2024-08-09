@@ -126,7 +126,7 @@ const Travel = () => {
       console.log(response);
       navigate("/dashboard");
     } catch (error) {
-      console.log("Got error");
+      alert("Something went wrong! Please Try Again");
     }
   };
   return (
