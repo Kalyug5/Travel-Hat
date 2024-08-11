@@ -29,6 +29,7 @@ const Header = () => {
       const response = await dispatch(Logout()).unwrap();
       console.log(getCookie("token"));
       console.log(response);
+      fectchData();
     } catch (error) {}
   };
 
