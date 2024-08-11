@@ -127,6 +127,7 @@ const Travel = () => {
       navigate("/dashboard");
     } catch (error) {
       alert("Something went wrong! Please Try Again");
+      hideLoader();
     }
   };
   return (
